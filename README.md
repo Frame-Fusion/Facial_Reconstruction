@@ -82,7 +82,10 @@ Using **Instance Normalization**, the model adapts to each individual image, ens
 git clone https://github.com/Frame-Fusion/Facial_Reconstruction.git
 
 # Install dependencies
-pip install -r requirements.txt
+make requirements
+
+# Install dataset
+make dataset
 
 # Run the facial_reconstruction_final.ipynb, cell by cell
 
