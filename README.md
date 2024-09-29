@@ -1,43 +1,84 @@
-# Facial Reconstruction Model Using GANs
-## Project Overview
-This project implements a Facial Reconstruction Model using Generative Adversarial Networks (GANs) with a focus on high-quality image enhancement techniques. The primary objective is to reconstruct facial images by addressing various challenges such as motion blur, occlusions, and different lighting conditions.
+<h1 align="center">👁️‍🗨️ Frame Fusion: Facial Reconstruction Model Using GANs</h1>
 
-### Model Architecture
-- Machine Learning Techniques:
-The core of the model is built using Generative Adversarial Networks (GANs). Specifically:
+<p align="center">
+  <img src="https://img.shields.io/badge/Machine%20Learning-GAN-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Python-3.8%2B-FFD700?style=for-the-badge" />
+  <img src="https://img.shields.io/github/license/Frame-Fusion/Facial_Reconstruction?style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/Frame-Fusion/Facial_Reconstruction?style=social" />
+</p>
 
-  - Generator: A U-Net-like architecture with skip connections to allow better gradient flow during training.
-  - Discriminator: Uses both batch and instance normalization with gradient penalty and noise injection for more stable training.
-- Image Enhancement Techniques:
-Several advanced image enhancement models have been integrated to improve the generated outputs:
+---
 
-  - Deblurring: We are planning to integrate DeBlurGAN-v2 to reduce motion blur in real-time.
-  - Upscaling: High-resolution outputs are achieved using ESRGAN (Enhanced Super-Resolution GAN) for refining facial details.
-- Handling Real-Time Processing:
-Despite hardware limitations, the model has been optimized for efficiency:
+## 🚀 **Project Overview**
 
-  - Processing a batch of size 16 takes approximately 4 hours per epoch on the current hardware setup (16GB RAM, Ryzen 5 CPU).
-  - Although real-time processing hasn't been fully implemented yet, efficiency strategies such as instance normalization and gradient accumulation have been considered to reduce memory usage without compromising accuracy.
-## Challenges and Approach
-- Motion Blur:
-To address motion blur, we're leveraging models like DeBlurGAN. Future enhancements will further incorporate DeBlurGAN-v2 for better handling of fast motion in video frames.
+Welcome to **Frame Fusion**, an advanced **Facial Reconstruction Model** using **Generative Adversarial Networks (GANs)**. Our goal is to enhance facial images by addressing issues like **motion blur**, **occlusions**, and **lighting variations** through state-of-the-art machine learning techniques.
 
-- Occlusions:
-Occlusions (e.g., faces partially covered by objects) are mitigated using skip connections in the generator, which helps in recovering finer details from non-occluded regions.
+<details>
+<summary>🛠️ <b>Model Architecture (Click to Expand)</b></summary>
 
-- Lighting Variations:
-The dataset includes images under five different lighting conditions. The GAN is trained to be robust across varying lighting setups using instance normalization, which ensures adaptability across lighting variations.
+### 🧠 **Core Machine Learning Techniques**
+- **Generator**: U-Net-like architecture with **skip connections** for efficient gradient flow.
+- **Discriminator**: Leverages **Batch Normalization**, **Instance Normalization**, and **Gradient Penalty** for stable training.
 
-## Future Enhancements Plan
-- Facial Recognition and 3D Reconstruction:
-In future iterations, we aim to integrate facial recognition and 3D facial reconstruction techniques for more accurate and versatile outputs. This will allow better recognition of subtle features from various angles, using DFM and 3DMM.
+### 🔧 **Image Enhancement Techniques**
+- **Deblurring**: Integrated **DeBlurGAN-v2** to reduce motion blur.
+- **Upscaling**: High-resolution output achieved using **ESRGAN** for detailed facial refinement.
 
-- Performance Optimization:
-Currently, the model is trained with a batch size of 16, and each epoch takes approximately 4 hours to complete. Due to hardware constraints (16GB RAM, Ryzen 5 CPU), we have only been able to train the GAN for 2 epochs so far. Results are expected to significantly improve as the training progresses to 100 epochs.
+### ⚡ **Real-Time Processing**
+- Batch size: 16
+- Training time: ~4 hours per epoch on **16GB RAM, Ryzen 5 CPU**.
 
-- Hardware Constraints
-Due to the limited hardware resources (16GB RAM and Ryzen 5 CPU), training times are substantial (around 4 hours per epoch). This has limited our ability to experiment extensively and fully train the model. We expect that as training progresses through more epochs (targeting 100 epochs), the results will continue to improve, particularly in terms of facial detail reconstruction and reducing artifacts.
+</details>
 
-### current progress with only 2 epochs being trained.
+---
 
-![image](https://github.com/user-attachments/assets/f3db3d88-710e-4518-80d6-fd188b489eb9)
+<details>
+<summary>⚙️ <b>Challenges and Solutions (Click to Expand)</b></summary>
+
+### 🔄 **Motion Blur**
+We address motion blur using **DeBlurGAN** and plan to enhance this with **DeBlurGAN-v2**.
+
+### 🦾 **Occlusions**
+Skip connections in the generator help recover facial details in the presence of occlusions.
+
+### 💡 **Lighting Variations**
+Using **Instance Normalization**, the model adapts to different lighting conditions, ensuring robust results.
+
+</details>
+
+---
+
+<details>
+<summary>🔮 <b>Future Enhancements (Click to Expand)</b></summary>
+
+- **Facial Recognition & 3D Reconstruction**: Future improvements will include 3D facial recognition techniques.
+- **Performance Optimization**: As we aim to train for 100 epochs, we expect improved facial detail and reduced artifacts.
+
+### 🚧 **Hardware Constraints**
+Current training is limited by **16GB RAM** and **Ryzen 5 CPU**, with each epoch taking ~4 hours. Training for more epochs (target: 100) will enhance results.
+
+</details>
+
+---
+
+## 🧬 **Technologies Used**
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=white&style=for-the-badge" alt="Python" />
+  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?logo=pytorch&logoColor=white&style=for-the-badge" alt="PyTorch" />
+  <img src="https://img.shields.io/badge/TensorFlow-FF6F00?logo=tensorflow&logoColor=white&style=for-the-badge" alt="TensorFlow" />
+  <img src="https://img.shields.io/badge/ESRGAN-BlueViolet?style=for-the-badge" alt="ESRGAN" />
+</p>
+
+---
+
+## 💻 **How to Run**
+
+```bash
+# Clone the repository
+git clone https://github.com/Frame-Fusion/Facial_Reconstruction.git
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run the training script
+python train.py
