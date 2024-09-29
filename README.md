@@ -89,3 +89,4 @@ make dataset
 
 # Run the facial_reconstruction_final.ipynb, cell by cell
 
+# Make sure to uncomment starting cells to load and extract frames from dataset
