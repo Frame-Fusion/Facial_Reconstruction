@@ -49,8 +49,8 @@ opt_einsum==3.4.0
 optree==0.12.1
 packaging==24.1
 parso==0.8.4
-pillow==10.4.0
 platformdirs==4.3.6
+pillow==10.4.0
 prompt_toolkit==3.0.48
 protobuf==4.25.5
 psutil==6.0.0
